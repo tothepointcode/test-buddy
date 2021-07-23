@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 
 // components
 import BigText from "./../components/BigText";
+import SmallText from "./../components/SmallText";
 import MyTextInput from "./../components/MyTextInput";
 
 interface HomeProps {
@@ -12,9 +13,13 @@ interface HomeProps {
 const Home = (props: HomeProps): JSX.Element => {
   return (
     <View style={styles.container}>
-      <BigText title="Welcome!" style={{ color: "black", fontWeight: 'bold' }} />
-      <Text style={styles.text}>Enter your team {props.name}</Text>
-      <MyTextInput label="Your team" placeholder="Eg. FC Barcelona"/>
+      <BigText
+        title="Welcome!"
+        style={{ color: "black", fontWeight: "bold" }}
+      />
+      <SmallText title="To My Playground" style={{ color: "white" }} />
+      <MyTextInput label="Your team" placeholder="Eg. FC Barcelona" />
+      <Text style={styles.text}>From Env: {props.name}</Text>
     </View>
   );
 };
@@ -25,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#9CA3AF",
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 35
+    paddingHorizontal: 35,
   },
   text: {
     color: "#fff",
