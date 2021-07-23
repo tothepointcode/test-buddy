@@ -3,6 +3,8 @@ import { Text, View, StyleSheet, TextInput } from "react-native";
 
 // icon
 import { Entypo } from "@expo/vector-icons";
+// colors
+import { Colors } from "./../components/Colors";
 
 interface InputProps {
   placeholder: string;
@@ -12,6 +14,8 @@ interface InputProps {
   labelStyle?: any;
 }
 
+const { gray2, white, dark1 } = Colors;
+
 const MyTextInput: React.FC<InputProps> = (props): JSX.Element => {
   const { label, labelStyle, inputStyle, iconName } = props;
 
@@ -20,14 +24,14 @@ const MyTextInput: React.FC<InputProps> = (props): JSX.Element => {
       <Text style={[styles.label, labelStyle]}>{label}</Text>
       <TextInput
         {...props}
-        placeholderTextColor="#919191"
+        placeholderTextColor={gray2}
         style={[styles.input, inputStyle]}
       />
       <Entypo
         style={styles.inputIcon}
         name={iconName}
         size={24}
-        color="#919191"
+        color={gray2}
       />
     </View>
   );
@@ -40,16 +44,16 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   input: {
-    color: "#fff",
+    color: white,
     fontSize: 14,
     padding: 15,
-    backgroundColor: "#111",
+    backgroundColor: dark1,
     borderRadius: 15,
     marginTop: 5,
     paddingLeft: 50,
   },
   label: {
-    color: "#111",
+    color: dark1,
     fontSize: 13,
   },
   inputIcon: {

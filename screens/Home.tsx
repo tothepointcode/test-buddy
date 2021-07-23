@@ -5,19 +5,20 @@ import { View, Text, StyleSheet } from "react-native";
 import BigText from "./../components/BigText";
 import SmallText from "./../components/SmallText";
 import MyTextInput from "./../components/MyTextInput";
+// colors
+import { Colors } from "./../components/Colors";
 
 interface HomeProps {
   name: string;
 }
 
+const { gray1, white, black } = Colors;
+
 const Home = (props: HomeProps): JSX.Element => {
   return (
     <View style={styles.container}>
-      <BigText
-        title="Welcome!"
-        style={{ color: "black", fontWeight: "bold" }}
-      />
-      <SmallText title="To My Playground" style={{ color: "white" }} />
+      <BigText title="Welcome!" style={{ color: black, fontWeight: "bold" }} />
+      <SmallText title="To My Playground" style={{ color: white }} />
       <MyTextInput
         iconName="sports-club"
         label="Your team"
@@ -31,13 +32,13 @@ const Home = (props: HomeProps): JSX.Element => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#9CA3AF",
+    backgroundColor: gray1,
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 35,
   },
   text: {
-    color: "#fff",
+    color: white,
   },
 });
 
