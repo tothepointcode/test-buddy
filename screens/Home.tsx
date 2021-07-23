@@ -1,6 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
+// components
+import BigText from "./../components/BigText";
+
 interface HomeProps {
   name: string;
 }
@@ -8,6 +11,7 @@ interface HomeProps {
 const Home = (props: HomeProps): JSX.Element => {
   return (
     <View style={styles.container}>
+      <BigText title="Welcome!" style={{ color: "yellow" }} />
       <Text style={styles.text}>{props.name}</Text>
     </View>
   );
