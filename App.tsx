@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 // env
-import { APP_NAME } from "@env";
+import { APP_NAME } from "react-native-dotenv";
 
 export default function App() {
   return (
