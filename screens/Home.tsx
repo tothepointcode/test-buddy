@@ -24,6 +24,11 @@ const Home = (props: HomeProps): JSX.Element => {
         label="Your team"
         placeholder="Eg. FC Barcelona"
       />
+      <MyTextInput
+        iconName="sports-club"
+        label="Your 2nd team"
+        placeholder="Eg. Atletico de Madrid"
+      />
       <Text style={styles.text}>From Env: {props.name}</Text>
     </View>
   );

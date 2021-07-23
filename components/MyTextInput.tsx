@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput } from "react-native";
 
 // icon
@@ -18,6 +18,8 @@ const { gray2, white, dark1 } = Colors;
 
 const MyTextInput: React.FC<InputProps> = (props): JSX.Element => {
   const { label, labelStyle, inputStyle, iconName } = props;
+  const [active, setActive] = useState(false);
+  let customColor = active ? white : gray2;
 
   return (
     <View style={styles.inputContainer}>
@@ -25,13 +27,19 @@ const MyTextInput: React.FC<InputProps> = (props): JSX.Element => {
       <TextInput
         {...props}
         placeholderTextColor={gray2}
+        onFocus={() => {
+          setActive(true);
+        }}
+        onBlur={() => {
+          setActive(false);
+        }}
         style={[styles.input, inputStyle]}
       />
       <Entypo
         style={styles.inputIcon}
         name={iconName}
         size={24}
-        color={gray2}
+        color={customColor}
       />
     </View>
   );
