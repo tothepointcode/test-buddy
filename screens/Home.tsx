@@ -18,7 +18,11 @@ const Home = (props: HomeProps): JSX.Element => {
         style={{ color: "black", fontWeight: "bold" }}
       />
       <SmallText title="To My Playground" style={{ color: "white" }} />
-      <MyTextInput label="Your team" placeholder="Eg. FC Barcelona" />
+      <MyTextInput
+        iconName="sports-club"
+        label="Your team"
+        placeholder="Eg. FC Barcelona"
+      />
       <Text style={styles.text}>From Env: {props.name}</Text>
     </View>
   );
