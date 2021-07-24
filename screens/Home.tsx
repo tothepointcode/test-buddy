@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from "react-native";
 import BigText from "./../components/BigText";
 import SmallText from "./../components/SmallText";
 import MyTextInput from "./../components/MyTextInput";
-import DropWithFadeView from "./../components/DropWithFadeView";
+import ColorModView from "./../components/ColorModView";
 
 // colors
 import { Colors } from "./../components/Colors";
@@ -14,11 +14,11 @@ interface HomeProps {
   name: string;
 }
 
-const { gray1, white, black } = Colors;
+const { gray1, gray2, white, black } = Colors;
 
 const Home = (props: HomeProps): JSX.Element => {
   return (
-    <DropWithFadeView style={styles.container}>
+    <ColorModView color1={gray2} color2='teal' color3={gray1} style={styles.container}>
       <BigText title="Welcome!" style={{ color: black, fontWeight: "bold" }} />
       <SmallText title="To My Playground" style={{ color: white }} />
       <MyTextInput
@@ -32,7 +32,7 @@ const Home = (props: HomeProps): JSX.Element => {
         placeholder="Eg. Atletico de Madrid"
       />
       <Text style={styles.text}>From Env: {props.name}</Text>
-    </DropWithFadeView>
+    </ColorModView>
   );
 };
 
