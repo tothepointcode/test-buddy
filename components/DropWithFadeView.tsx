@@ -19,7 +19,18 @@ const DroppingView = (props: DroppingViewProps): JSX.Element => {
   }, [dropAnim]);
 
   return (
-    <Animated.View style={[props.style, { marginTop: dropAnim }]}>
+    <Animated.View
+      style={[
+        props.style,
+        {
+          marginTop: dropAnim,
+          opacity: dropAnim.interpolate({
+            inputRange: [-100, 0],
+            outputRange: [0, 1],
+          }),
+        },
+      ]}
+    >
       {props.children}
     </Animated.View>
   );

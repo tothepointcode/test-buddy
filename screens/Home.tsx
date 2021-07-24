@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from "react-native";
 import BigText from "./../components/BigText";
 import SmallText from "./../components/SmallText";
 import MyTextInput from "./../components/MyTextInput";
-import DroppingView from "./../components/DroppingView";
+import DropWithFadeView from "./../components/DropWithFadeView";
 
 // colors
 import { Colors } from "./../components/Colors";
@@ -18,7 +18,7 @@ const { gray1, white, black } = Colors;
 
 const Home = (props: HomeProps): JSX.Element => {
   return (
-    <DroppingView style={styles.container}>
+    <DropWithFadeView style={styles.container}>
       <BigText title="Welcome!" style={{ color: black, fontWeight: "bold" }} />
       <SmallText title="To My Playground" style={{ color: white }} />
       <MyTextInput
@@ -32,7 +32,7 @@ const Home = (props: HomeProps): JSX.Element => {
         placeholder="Eg. Atletico de Madrid"
       />
       <Text style={styles.text}>From Env: {props.name}</Text>
-    </DroppingView>
+    </DropWithFadeView>
   );
 };
 
