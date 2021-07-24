@@ -5,6 +5,8 @@ import { View, Text, StyleSheet } from "react-native";
 import BigText from "./../components/BigText";
 import SmallText from "./../components/SmallText";
 import MyTextInput from "./../components/MyTextInput";
+import FadingView from "./../components/FadingView";
+
 // colors
 import { Colors } from "./../components/Colors";
 
@@ -16,7 +18,7 @@ const { gray1, white, black } = Colors;
 
 const Home = (props: HomeProps): JSX.Element => {
   return (
-    <View style={styles.container}>
+    <FadingView style={styles.container}>
       <BigText title="Welcome!" style={{ color: black, fontWeight: "bold" }} />
       <SmallText title="To My Playground" style={{ color: white }} />
       <MyTextInput
@@ -30,7 +32,7 @@ const Home = (props: HomeProps): JSX.Element => {
         placeholder="Eg. Atletico de Madrid"
       />
       <Text style={styles.text}>From Env: {props.name}</Text>
-    </View>
+    </FadingView>
   );
 };
 
