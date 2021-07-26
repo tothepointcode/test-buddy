@@ -3,7 +3,7 @@ import React from "react";
 
 // env
 import { APP_NAME } from "react-native-dotenv";
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
 
 // screens
 import RootStack from "./navigators/RootStack";

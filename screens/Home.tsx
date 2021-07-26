@@ -9,9 +9,11 @@ import ColorModView from "./../components/ColorModView";
 
 // colors
 import { Colors } from "./../components/Colors";
+import MediumButton from "../components/MediumButton";
 
 interface HomeProps {
   name: string;
+  navigation: any;
 }
 
 const { gray1, gray2, white, black } = Colors;
@@ -40,6 +42,11 @@ const Home = (props: HomeProps): JSX.Element => {
         placeholder="Eg. Atletico de Madrid"
       />
       <Text style={styles.text}>From Env: {props.name}</Text>
+      <MediumButton
+        buttonHandler={() => props.navigation.navigate("Dashboard")}
+      >
+        To Dashboard
+      </MediumButton>
     </ColorModView>
   );
 };
