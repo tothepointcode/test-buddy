@@ -18,8 +18,16 @@ const { gray1, gray2, white, black } = Colors;
 
 const Home = (props: HomeProps): JSX.Element => {
   return (
-    <ColorModView color1={gray2} color2='teal' color3={gray1} style={styles.container}>
-      <BigText title="Welcome!" style={{ color: black, fontWeight: "bold" }} />
+    <ColorModView
+      color1={gray2}
+      color2="teal"
+      color3={gray1}
+      style={styles.container}
+    >
+      <BigText
+        title="Welcome!"
+        style={{ color: black, fontFamily: "sans-serif-medium" }}
+      />
       <SmallText title="To My Playground" style={{ color: white }} />
       <MyTextInput
         iconName="sports-club"
