@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   TouchableOpacity,
   StyleSheet,
-  Text,
   GestureResponderEvent,
+  Animated,
 } from "react-native";
 // colors
 import { Colors } from "./../components/Colors";
@@ -17,12 +17,35 @@ interface ButtonProps {
 }
 
 const MediumButton = (props: ButtonProps): JSX.Element => {
+  const bgAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(bgAnim, {
+      toValue: 2,
+      useNativeDriver: false,
+      duration: 2000,
+      delay: 2000,
+    }).start();
+  }, [bgAnim]);
+
   return (
     <TouchableOpacity
-      style={[props.style, styles.button]}
+      style={[styles.button, props.style]}
       onPress={props.buttonHandler}
     >
-      <Text style={styles.text}>{props.children}</Text>
+      <Animated.Text
+        style={[
+          styles.text,
+          {
+            color: bgAnim.interpolate({
+              inputRange: [0, 2],
+              outputRange: ["teal", black],
+            }),
+          },
+        ]}
+      >
+        {props.children}
+      </Animated.Text>
     </TouchableOpacity>
   );
 };
