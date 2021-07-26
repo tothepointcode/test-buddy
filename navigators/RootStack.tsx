@@ -6,6 +6,7 @@ const { gray1, gray2, white, black } = Colors;
 
 import Home from "./../screens/Home";
 import Dashboard from "./../screens/Dashboard";
+import Modal from "./../screens/Modal";
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,15 @@ const RootStack = () => {
     >
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
+      <Stack.Screen
+        name="Modal"
+        component={Modal}
+        options={{
+          presentation: "transparentModal",
+          headerShown: false,
+          cardOverlayEnabled: true,
+        }}
+      />
     </Stack.Navigator>
   );
 };
