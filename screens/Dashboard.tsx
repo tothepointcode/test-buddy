@@ -38,6 +38,7 @@ const Dashboard = (props: DashboardProps): JSX.Element => {
       color2="teal"
       color3={gray1}
       style={styles.container}
+      aniDuration={1000}
     >
       <View style={styles.carouView}>
         <HomeCarousel dataItems={data} />

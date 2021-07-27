@@ -7,6 +7,7 @@ interface ColorModViewProps {
   color1: string;
   color2: string;
   color3: string;
+  aniDuration?: number;
 }
 
 const ColorModView = (props: ColorModViewProps): JSX.Element => {
@@ -16,7 +17,7 @@ const ColorModView = (props: ColorModViewProps): JSX.Element => {
   React.useEffect(() => {
     Animated.timing(dropAnim, {
       toValue: 0,
-      duration: 2000,
+      duration: props.aniDuration || 2000,
       useNativeDriver: false,
     }).start();
   }, [dropAnim]);
