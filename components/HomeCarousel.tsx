@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Carousel from "react-native-snap-carousel";
 
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
 interface CarouselProps {
   dataItems: Object[];
@@ -15,12 +15,20 @@ const HomeCarousel = (props: CarouselProps): JSX.Element => {
     return (
       <View
         style={{
-          backgroundColor: "floralwhite",
-          borderRadius: 5,
-          height: 250,
-          padding: 50,
+          backgroundColor: "#fff",
+          borderRadius: 15,
+          height: 300,
         }}
       >
+        <Image
+          style={{
+            width: "100%",
+            height: "100%",
+            resizeMode: "cover",
+            borderRadius: 15,
+          }}
+          source={{ uri: item.img }}
+        />
         <Text style={{ fontSize: 30 }}>{item.title}</Text>
         <Text>{item.text}</Text>
       </View>

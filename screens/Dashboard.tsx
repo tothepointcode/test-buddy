@@ -18,22 +18,17 @@ const Dashboard = (props: DashboardProps): JSX.Element => {
     {
       title: "Item 1",
       text: "Text 1",
+      img: "https://images.unsplash.com/photo-1601404294583-bb2f4510c357?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
     },
     {
       title: "Item 2",
       text: "Text 2",
+      img: "https://images.unsplash.com/photo-1600411832986-5a4477b64a1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
     },
     {
       title: "Item 3",
       text: "Text 3",
-    },
-    {
-      title: "Item 4",
-      text: "Text 4",
-    },
-    {
-      title: "Item 5",
-      text: "Text 5",
+      img: "https://images.unsplash.com/photo-1605529000799-f28efe8a6dd0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     },
   ];
 
