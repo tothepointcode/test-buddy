@@ -8,6 +8,7 @@ const { gray1, gray2, black, white, dark1 } = Colors;
 
 interface CarouselProps {
   dataItems: Object[];
+  type: string | any;
 }
 
 const HomeCarousel = (props: CarouselProps): JSX.Element => {
@@ -50,7 +51,7 @@ const HomeCarousel = (props: CarouselProps): JSX.Element => {
 
   return (
     <Carousel
-      layout={"default"}
+      layout={props.type}
       ref={carouRef}
       data={props.dataItems}
       sliderWidth={400}

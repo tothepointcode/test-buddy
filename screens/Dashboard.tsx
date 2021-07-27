@@ -41,7 +41,7 @@ const Dashboard = (props: DashboardProps): JSX.Element => {
       aniDuration={1000}
     >
       <View style={styles.carouView}>
-        <HomeCarousel dataItems={data} />
+        <HomeCarousel type="default" dataItems={data} />
       </View>
     </ColorModView>
   );
