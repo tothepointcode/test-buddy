@@ -19,8 +19,6 @@ const HomeCarousel = (props: CarouselProps): JSX.Element => {
           borderRadius: 5,
           height: 250,
           padding: 50,
-          marginLeft: 25,
-          marginRight: 25,
         }}
       >
         <Text style={{ fontSize: 30 }}>{item.title}</Text>
@@ -34,8 +32,8 @@ const HomeCarousel = (props: CarouselProps): JSX.Element => {
       layout={"default"}
       ref={carouRef}
       data={props.dataItems}
-      sliderWidth={300}
-      itemWidth={400}
+      sliderWidth={400}
+      itemWidth={300}
       renderItem={_renderItem}
       onSnapToItem={(index) => setActive(index)}
     />

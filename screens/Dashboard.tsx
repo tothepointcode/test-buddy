@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 // components
 import BigText from "./../components/BigText";
@@ -44,11 +44,9 @@ const Dashboard = (props: DashboardProps): JSX.Element => {
       color3={gray1}
       style={styles.container}
     >
-      <BigText
-        title="Dashboard!"
-        style={{ color: black, fontFamily: "sans-serif-medium" }}
-      />
-      <HomeCarousel dataItems={data}/>
+      <View style={styles.carouView}>
+        <HomeCarousel dataItems={data} />
+      </View>
     </ColorModView>
   );
 };
@@ -59,7 +57,9 @@ const styles = StyleSheet.create({
     backgroundColor: gray1,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 35,
+  },
+  carouView: {
+    marginTop: 25,
   },
 });
 
