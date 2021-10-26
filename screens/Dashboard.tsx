@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 // components
-import BigText from "./../components/BigText";
 import ColorModView from "./../components/ColorModView";
 import HomeCarousel from "./../components/HomeCarousel";
 
@@ -11,7 +10,7 @@ import { Colors } from "./../components/Colors";
 
 interface DashboardProps {}
 
-const { gray1, gray2, black } = Colors;
+const { gray1, gray2 } = Colors;
 
 const Dashboard = (props: DashboardProps): JSX.Element => {
   const data = [

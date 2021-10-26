@@ -4,7 +4,7 @@ import Carousel from "react-native-snap-carousel";
 import { View, Text, Image } from "react-native";
 // colors
 import { Colors } from "./../components/Colors";
-const { dark2, gray2, black, white, dark1 } = Colors;
+const { dark2, white } = Colors;
 
 interface CarouselProps {
   dataItems: Object[];
