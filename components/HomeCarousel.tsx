@@ -4,7 +4,7 @@ import Carousel from "react-native-snap-carousel";
 import { View, Text, Image } from "react-native";
 // colors
 import { Colors } from "./../components/Colors";
-const { gray1, gray2, black, white, dark1 } = Colors;
+const { dark2, gray2, black, white, dark1 } = Colors;
 
 interface CarouselProps {
   dataItems: Object[];
@@ -35,7 +35,7 @@ const HomeCarousel = (props: CarouselProps): JSX.Element => {
         />
         <View
           style={{
-            backgroundColor: gray2,
+            backgroundColor: dark2,
             borderRadius: 15,
             alignItems: "center",
             marginTop: 10,
