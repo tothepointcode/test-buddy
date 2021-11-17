@@ -47,9 +47,7 @@ const Home = (props: HomeProps): JSX.Element => {
       >
         To Dashboard
       </MediumButton>
-      <MediumButton
-        buttonHandler={() => props.navigation.navigate("Modal")}
-      >
+      <MediumButton buttonHandler={() => props.navigation.navigate("Modal")}>
         To Modal
       </MediumButton>
     </ColorModView>

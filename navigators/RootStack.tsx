@@ -6,6 +6,7 @@ const { dark2, white } = Colors;
 
 import Home from "./../screens/Home";
 import Dashboard from "./../screens/Dashboard";
+import FontShowcase from "./../screens/FontShowcase";
 import Modal from "./../screens/Modal";
 
 const Stack = createStackNavigator();
@@ -19,6 +20,13 @@ const RootStack = () => {
         headerStyle: { backgroundColor: dark2 },
       }}
     >
+      <Stack.Screen
+        name="FontShowcase"
+        component={FontShowcase}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen
