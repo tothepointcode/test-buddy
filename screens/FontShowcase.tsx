@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
 
 // components
 import StyledText from "./../components/StyledText";
+import StyledButton from "./../components/StyledButton";
+
+// UPDATES
+import * as Updates from "expo-updates";
 
 // colors
 import { Colors } from "./../components/Colors";
@@ -15,10 +19,41 @@ import AppLoading from "expo-app-loading";
 const { white } = Colors;
 
 const FontShowcase = (): JSX.Element => {
+  const [updateChecking, setUpdateChecking] = useState(false);
   let [fontsLoaded] = useFonts({
     Italianno_400Regular,
     Lobster_400Regular,
   });
+
+  // auto stuff
+  useEffect(() => {
+    reactToUpdates();
+  }, []);
+
+  const reactToUpdates = async () => {
+    Updates.addListener((event) => {
+      if (event.type === Updates.UpdateEventType.UPDATE_AVAILABLE) {
+        alert("An update is available. Restart your app to see it.");
+        Updates.reloadAsync();
+      }
+    });
+  };
+  // auto ends
+
+  // manual stuff
+  const triggerUpdateCheck = async () => {
+    try {
+      const update = await Updates.checkForUpdateAsync();
+      if (update.isAvailable) {
+        await Updates.fetchUpdateAsync();
+        alert("An update is available. Restart your app to see it.");
+        // await Updates.reloadAsync();
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+  // manual stuff ends
 
   if (!fontsLoaded) return <AppLoading />;
   return (
@@ -42,6 +77,16 @@ const FontShowcase = (): JSX.Element => {
         <View style={styles.section}>
           <StyledText title="Likes are FREE ;)" />
         </View>
+
+        <StyledButton
+          title="Check for Updates"
+          activity={updateChecking}
+          onPress={async () => {
+            setUpdateChecking(true);
+            await triggerUpdateCheck();
+            setUpdateChecking(false);
+          }}
+        />
       </View>
     </View>
   );
