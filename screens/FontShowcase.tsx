@@ -48,6 +48,8 @@ const FontShowcase = (): JSX.Element => {
         await Updates.fetchUpdateAsync();
         alert("An update is available. Restart your app to see it.");
         // await Updates.reloadAsync();
+      } else {
+        alert("No update is available");
       }
     } catch (error) {
       alert(error.message);
